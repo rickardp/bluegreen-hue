@@ -2,3 +2,4 @@ git+https://github.com/rthalley/dnspython.git@f5d8cc566ededacfe4ea2cade6445e25b5
 # Not working yet:
 #git+https://github.com/rkokkelk/python-athom-api.git@e517cd32844ba13b0b67dc523c8976db975acf60
 requests==2.21.0
+qhue==1.0.12
