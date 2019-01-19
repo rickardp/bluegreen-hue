@@ -7,3 +7,4 @@ RUN apk add --no-cache git \
  && apk del git
 
 COPY *.py /app/
+

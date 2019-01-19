@@ -2,6 +2,14 @@ import dns.name
 import dns.resolver
 import random, sys, re
 
+def add_args(parser):
+    parser.add_argument('--dns-match-blue', metavar='regex', dest='dnsmatchblue', type=str, default='blue',
+                        help='the DNS response that matches Blue (default is "blue")')
+    parser.add_argument('--dns-match-green', metavar='regex', dest='dnsmatchgreen', type=str, default='green',
+                        help='the DNS response that matches Blue (default is "green")')
+    parser.add_argument('--cname', metavar='NUMLEVELS', dest='cname', type=int, default=0,
+                        help='pre-resolves NUMLEVELS levels of CNAME')
+
 def get_source(args):
     rec = args.dns
     if not rec: raise ValueError()
