@@ -17,6 +17,16 @@ To build and run, use
      # my-site.com is cname to traffic manager
      docker run -it $(docker build -q .) --dns my-site.com --cname 1 --hue 192.168.0.1
 
+### How to control Homey
+
+Homey supports webhooks from the cloud API. You can control the event names in the webhooks by adjusting `--homey-*-event`. Create a flow for each event you want to support. In this flow you can adjust lamps, lightstrips, change LED ring color, speak, or whatever.
+
+You can either have the webhook sent with every poll, or only when it is changed (the latter is the default).
+
+### How to control Hue
+
+Hue support is very basic. Specify the IP and username, and which lamps to control. The colors are hard coded.
+
 ## Usage
 
     usage: main.py [-h] [--dns hostname] [--dns-match-blue regex]
