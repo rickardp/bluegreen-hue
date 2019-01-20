@@ -17,6 +17,8 @@ To build and run, use
      # my-site.com is cname to traffic manager
      docker run -it $(docker build -q .) --dns my-site.com --cname 1 --hue 192.168.0.1
 
+The easiest way to have it run as a service is probably to create a `docker-compose.yml` file and run it with `docker-compose up --build -d`. Set restart policy to `always` to have it start up automatically after a reboot.
+
 ### How to control Homey
 
 Homey supports webhooks from the cloud API. You can control the event names in the webhooks by adjusting `--homey-*-event`. Create a flow for each event you want to support. In this flow you can adjust lamps, lightstrips, change LED ring color, speak, or whatever.
