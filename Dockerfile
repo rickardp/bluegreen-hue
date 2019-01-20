@@ -8,3 +8,4 @@ RUN apk add --no-cache git \
 
 COPY *.py /app/
 
+ENTRYPOINT ["python", "/app/main.py"]
