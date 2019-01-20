@@ -37,3 +37,33 @@ Hue support is very basic. Specify the IP and username, and which lamps to contr
                [--homey-green-event EVENT] [--homey-mix-event EVENT]
                [--homey-mix-error EVENT] [--homey-webhook-repeat] [--hue IP]
                [--hue-username USERNAME] [--hue-lights ARRAY]
+
+    Blue/Green deployment publish to Philips Hue.
+
+    optional arguments:
+      -h, --help            show this help message and exit
+      --dns hostname        use DNS approach
+      --dns-match-blue regex
+                            the DNS response that matches Blue (default is "blue")
+      --dns-match-green regex
+                            the DNS response that matches Blue (default is
+                            "green")
+      --cname NUMLEVELS     pre-resolves NUMLEVELS levels of CNAME
+      --interval SECONDS    polling interval
+      --homey ID            control Athom Homey (ID e.g. 0123456789abcdef12345678)
+      --homey-blue-event EVENT
+                            the webhook event to send when blue
+      --homey-green-event EVENT
+                            the webhook event to send when green
+      --homey-mix-event EVENT
+                            the webhook event to send when both blue and green
+                            (gradual rollout)
+      --homey-mix-error EVENT
+                            the webhook event to send when indeterminate
+      --homey-webhook-repeat
+                            repeat the webhook (default is to only run when
+                            changed)
+      --hue IP              control Philips Hue bridge (IP e.g. 192.168.1.11)
+      --hue-username USERNAME
+                            the username to use when connecting to the bridge
+      --hue-lights ARRAY    the light(s) to change
