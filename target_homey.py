@@ -15,6 +15,7 @@ def add_args(parser):
 last = None
 def get_target(args):
     id = args.homey
+    print("Will control Athom Homey @ %s" % id)
     def send_webhook(state):
         global last
         if state == "blue":
