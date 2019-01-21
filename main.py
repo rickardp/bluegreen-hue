@@ -37,7 +37,8 @@ if not targets:
 try:
     while True:
         ret = source()
-        print(ret)
+        print("is %s" % ret)
+        sys.stdout.flush()
         for tgt in targets:
             tgt(ret)
         time.sleep(args.interval)
