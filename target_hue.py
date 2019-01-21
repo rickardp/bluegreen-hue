@@ -1,4 +1,5 @@
 import qhue
+import sys
 
 def add_args(parser):
     parser.add_argument('--hue-username', metavar='USERNAME', dest='hue_username', type=str, default="bluegreen",
@@ -8,6 +9,12 @@ def add_args(parser):
 
 
 def get_target(args):
+    if not args.hue_username and args.hue:
+        print("Need to create the username")
+        from qhue import create_new_username
+        username = create_new_username(args.hue)
+        print("Add '--hue-username %s' to the command line and restart" % username)
+        sys.exit(0)
     b = qhue.Bridge(args.hue, args.hue_username)
     lights = list(map(int, args.hue_lights.split(',')))
     def set_lights(state):
