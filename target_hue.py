@@ -2,7 +2,7 @@ import qhue
 import sys
 
 def add_args(parser):
-    parser.add_argument('--hue-username', metavar='USERNAME', dest='hue_username', type=str, default="bluegreen",
+    parser.add_argument('--hue-username', metavar='USERNAME', dest='hue_username', type=str,
                         help='the username to use when connecting to the bridge')
     parser.add_argument('--hue-lights', metavar='ARRAY', dest='hue_lights', type=str, default="1",
                         help='the light(s) to change')
