@@ -15,6 +15,7 @@ def get_target(args):
         username = create_new_username(args.hue)
         print("Add '--hue-username %s' to the command line and restart" % username)
         sys.exit(0)
+    print("Will control Philips Hue @ %s" % args.hue)
     b = qhue.Bridge(args.hue, args.hue_username)
     lights = list(map(int, args.hue_lights.split(',')))
     def set_lights(state):
