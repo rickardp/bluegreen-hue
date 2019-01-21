@@ -17,10 +17,6 @@ To build and run, use
      # my-site.com is cname to traffic manager
      docker run -it $(docker build -q .) --dns my-site.com --cname 1 --hue 192.168.0.1 --hue-username xxxxxxx
      
-### Note about the Philips hue and username creation
-The first time you run it, you have to create a username. To do this, just leave out the --hue-username parameter. Press the button on the Hue when requested and note down the generated username. Then add this to the `--hue-username` parameter to authenticate.
-
-The easiest way to have it run as a service is probably to create a `docker-compose.yml` file and run it with `docker-compose up --build -d`. Set restart policy to `always` to have it start up automatically after a reboot.
 
 ### How to control Homey
 
@@ -31,6 +27,11 @@ You can either have the webhook sent with every poll, or only when it is changed
 ### How to control Hue
 
 Hue support is very basic. Specify the IP and username, and which lamps to control. The colors are hard coded.
+
+#### Note about the Philips hue and username creation
+The first time you run it, you have to create a username. To do this, just leave out the --hue-username parameter. Press the button on the Hue when requested and note down the generated username. Then add this to the `--hue-username` parameter to authenticate.
+
+The easiest way to have it run as a service is probably to create a `docker-compose.yml` file and run it with `docker-compose up --build -d`. Set restart policy to `always` to have it start up automatically after a reboot.
 
 ## Usage
 
