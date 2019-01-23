@@ -28,5 +28,7 @@ def get_target(args):
         else:
             hue = 0
         for light in lights:
+            b.lights[light].state(bri=127, hue=hue)
+        for light in lights:
             b.lights[light].state(bri=255, hue=hue)
     return set_lights
